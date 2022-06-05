@@ -2,7 +2,7 @@
 const bodyParser = require("body-parser");
 
 // Setup empty JS object to act as endpoint for all routes
-const projectData = {};
+let projectData = {};
 
 // Require Express to run server and routes
 const express = require("express");
@@ -22,9 +22,9 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static("website"));
 
-app.get("/", (req, res) => {
-  res.send("<p>madman</p>");
-});
+// app.get("/", (req, res) => {
+//   res.send("<p>madman</p>");
+// });
 
 // Setup Server
 const port = 3000;
@@ -38,20 +38,35 @@ function listening() {
 
 
 
+// Post Route
+const data = [];
+app.post('/add', addInfo);
 
-app.post('/add', postData);
-
-function postData(req,res){
-
-  newEntry = {
-    zipCode: req.body.zip,
-    feeling: req.body.feeling,
-    
-  }
-
-  projectData.push(newEntry)
-  // console.log(projectData);
+function addInfo(req, res) {
+  projectData['date'] = req.body.date;
+  projectData['temp'] = req.body.temp;
+  projectData['content'] = req.body.content;
+  res.send(projectData);
 }
+
+
+
+// app.post('/add', postData);
+
+// function postData(req,res){
+
+//   newEntry = {
+//     date: req.body.date,
+//     temp: req.body.temp,
+//     feeling: req.body.feeling,
+    
+//   }
+
+//   projectData.push(newEntry)
+//   res.send(projectData);
+//   console.log(projectData)
+//   // console.log(projectData);
+// }
 
 // app.post('/add', async function(req, res){
 //   const body = await req.body;
