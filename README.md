@@ -37,5 +37,5 @@ npm start
 ## Authors
 
 - [@udacity](https://github.com/udacity) -  Built the `HTML` and `CSS` file of the Client side
--[@Pauxiel](https://github.com/pauxiel) - Built the `Server.js` file of the server side and `app.js` file of the Client side
+- [@Pauxiel](https://github.com/pauxiel) - Built the `Server.js` file of the server side and `app.js` file of the Client side
 
