@@ -10,7 +10,6 @@ let apiKey = "a07b53f0e456a0416491eeaf5da64c89";
 
 document.getElementById("generate").addEventListener("click", performAction);
 
-
 function performAction(e) {
   const newZipcode = document.getElementById("zip").value;
   const newFeeling = document.getElementById("feelings").value;
@@ -18,9 +17,8 @@ function performAction(e) {
     .then((data) => {
       // console.log({ date: newDate, temp: data.main.temp, newFeeling });
       postData("/add", { date: newDate, temp: data.main.temp, newFeeling });
-     
     })
-    .then(updateUI());
+    .then((data) => updateUI(data));
 }
 
 const getData = async (baseURL, zipcode, key) => {
@@ -69,5 +67,3 @@ const updateUI = async () => {
     console.log("error", error);
   }
 };
-
-
