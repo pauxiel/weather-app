@@ -1,7 +1,7 @@
 # A Weather Journal App
 
 ## Brief description of the app
-A Weather Journal App is a asynchronous web app that uses Web API and user data to dynamically update the UI for a Weather-Journal App.
+A asynchronous web app that uses openweather API and user data to dynamically update the UI.
 
 ## Implementation
 This Project was Built using the following Technologies
